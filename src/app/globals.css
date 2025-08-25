@@ -23,7 +23,7 @@
 }
 
 html {
-  background: #0e0e0e;
+  background: #f1efeb;
   color: #fff;
   font-family: "Rubik", sans-serif;
   min-height: 100%;
@@ -87,11 +87,25 @@ body {
   font-size: 2rem;
 }
 
+.Text-16 {
+  font-size: 4.8rem;
+}
+
 @media screen and (min-width: 1080px) {
   /* 1080px */
   .Text-2 {
     font-size: 2rem;
     /* 32px */
+  }
+
+  .Text-16 {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Text-2 {
+    font-size: 1.6rem;
   }
 }
 

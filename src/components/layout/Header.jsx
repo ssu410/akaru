@@ -1,16 +1,54 @@
+"use client";
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import MainLogo from "@/components/MainLogo";
 import { Arrow } from "@/components/icon/ArrowIcons";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 
-export default function Header() {
+export function Header() {
+  const pathname = usePathname();
+  const isMain = pathname === "/";
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    if (!isMain) return;
+
+    document.body.classList.add("isMain");
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // 스크롤 임계값 설정 (화면 높이의 30%)
+      const threshold = windowHeight * 0.3;
+
+      if (scrollY > threshold) {
+        headerRef.current.classList.add("--isShow");
+      } else {
+        headerRef.current.classList.remove("--isShow");
+      }
+    };
+
+    // 초기 상태 설정
+    if (headerRef.current) {
+      headerRef.current.classList.remove("--isShow");
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isMain]);
+
   return (
-    <header className="Header">
+    <header className="Header" ref={headerRef}>
       <Link href="/" className="Navigation-logo">
         <div className="Logo Navigation-logo-letter">
-          <Logo />
+          {isMain ? <MainLogo /> : <Logo />}
         </div>
       </Link>
-      <button className="NavigationBurger">
+      <button className={`NavigationBurger ${isMain ? "--main" : "--sub"}`}>
         <div className="NavigationBurger-inner">
           <span className="NavigationBurger-background"></span>
           <span className="NavigationBurger-label SmallText-2 --ttu">Menu</span>
@@ -32,7 +70,10 @@ export default function Header() {
           </div>
         </Link>
         <div className="Navigation-langButton">
-          <a href="/" className="Navigation-langButton-item SmallText-1 --ttu --active">
+          <a
+            href="/"
+            className="Navigation-langButton-item SmallText-1 --ttu --active"
+          >
             <span>FR</span>
           </a>
           <a href="/" className="Navigation-langButton-item SmallText-1 --ttu">

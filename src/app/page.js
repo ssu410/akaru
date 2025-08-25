@@ -862,7 +862,7 @@ export default function Home() {
                               <span className="--text">
                                 <a
                                   href="/en/expertises/logo-and-graphic-charter/"
-                                  class="AppLink"
+                                  className="AppLink"
                                   data-v-138e99ee=""
                                 >
                                   Visual identity, graphic charter, logo
@@ -877,7 +877,7 @@ export default function Home() {
                               <span className="--text">
                                 <a
                                   href="/en/expertises/logo-and-graphic-charter/"
-                                  class="AppLink"
+                                  className="AppLink"
                                   data-v-138e99ee=""
                                 >
                                   Visual identity, graphic charter, logo
@@ -892,7 +892,7 @@ export default function Home() {
                               <span className="--text">
                                 <a
                                   href="/en/expertises/logo-and-graphic-charter/"
-                                  class="AppLink"
+                                  className="AppLink"
                                   data-v-138e99ee=""
                                 >
                                   Visual identity, graphic charter, logo
@@ -907,7 +907,7 @@ export default function Home() {
                               <span className="--text">
                                 <a
                                   href="/en/expertises/logo-and-graphic-charter/"
-                                  class="AppLink"
+                                  className="AppLink"
                                   data-v-138e99ee=""
                                 >
                                   Visual identity, graphic charter, logo
