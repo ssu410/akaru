@@ -1,6 +1,25 @@
+/* ========================================
+   IMPORTS
+   ======================================== */
 @import "@/styles/reset.css";
 @import "@/styles/header.css";
 
+/* ========================================
+   CSS VARIABLES
+   ======================================== */
+:root {
+  --terra: #e49366;
+  --green: #798e7b;
+  --pink: #b692a1;
+  --blue: #bfccd8;
+  --black: #0e0e0e;
+  --beige: #f1efeb;
+  --grey: #666d73;
+}
+
+/* ========================================
+   FONT DECLARATIONS
+   ======================================== */
 @font-face {
   font-family: "Alliance Platt";
   src: url("/fonts/AllianceNo1-Regular.woff2") format("woff2");
@@ -22,8 +41,11 @@
   font-style: normal;
 }
 
+/* ========================================
+   BASE STYLES
+   ======================================== */
 html {
-  background: #f1efeb;
+  background: var(--beige);
   color: #fff;
   font-family: "Rubik", sans-serif;
   min-height: 100%;
@@ -36,22 +58,22 @@ html *,
 html :after,
 html :before {
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent
+  -webkit-tap-highlight-color: transparent;
 }
 
 html ::-webkit-scrollbar {
   background: transparent;
-  width: 0
+  width: 0;
 }
 
 ::-moz-selection {
-  background: #e49366;
-  color: #0e0e0e
+  background: var(--terra);
+  color: var(--black);
 }
 
 ::selection {
-  background: #e49366;
-  color: #0e0e0e
+  background: var(--terra);
+  color: var(--black);
 }
 
 body {
@@ -60,10 +82,9 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
-.--ttu {
-  text-transform: uppercase;
-}
-
+/* ========================================
+   TYPOGRAPHY CLASSES
+   ======================================== */
 .SmallText-1 {
   font-family: "Alliance Platt", serif;
   font-style: normal;
@@ -83,6 +104,14 @@ body {
   font-size: 0.75rem;
 }
 
+.Text-1 {
+  font-family: "Alliance Platt", serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal;
+}
+
 .Text-2 {
   font-size: 2rem;
 }
@@ -91,38 +120,133 @@ body {
   font-size: 4.8rem;
 }
 
-@media screen and (min-width: 1080px) {
-  /* 1080px */
-  .Text-2 {
-    font-size: 2rem;
-    /* 32px */
+.AppSmallText-1 {
+  font-family: "Alliance Platt", serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.4;
+}
+
+.AppTitle-1 {
+  font-family: "Alliance Platt", serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.--ttu {
+  text-transform: uppercase;
+}
+
+.--dark {
+  color: var(--black);
+}
+
+.screen-hidden {
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+/* ========================================
+   COMPONENT STYLES
+   ======================================== */
+.AppYear {
+  border-radius: 3rem;
+  box-shadow: inset 0 0 0 0.05rem var(--black);
+  color: var(--black);
+  font-family: "Alliance Platt", serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: inherit;
+  line-height: normal;
+  padding: 0.3rem 0.75rem;
+}
+
+.AppImage-image {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* ========================================
+   MEDIA QUERIES
+   ======================================== */
+
+/* Mobile landscape and small tablets */
+@media screen and (min-width: 767px) {
+  .Text-1 {
+    font-size: 1.6rem;
   }
 
-  .Text-16 {
-    font-size: 6rem;
+  .SmallText-2 {
+    font-size: 0.75rem; /* 12px */
   }
 }
 
+/* Mobile portrait */
 @media screen and (max-width: 768px) {
   .Text-2 {
     font-size: 1.6rem;
   }
 }
 
-@media screen and (min-width: 767px) {
+/* Small tablets and large mobile */
+@media screen and (min-width: 769px) {
+  .AppSmallText-1 {
+    font-size: 0.4rem;
+  }
 
-  /* 767px */
-  .SmallText-2 {
-    font-size: 0.75rem;
-    /* 12px */
+  .AppTitle-1 {
+    font-size: 3.6rem;
   }
 }
 
+/* Large tablets and small desktops */
 @media screen and (min-width: 1080px) {
+  .Text-1 {
+    font-size: 1.6rem;
+  }
 
-  /* 1080px */
+  .Text-2 {
+    font-size: 2rem; /* 32px */
+  }
+
+  .Text-16 {
+    font-size: 6rem;
+  }
+
   .SmallText-1 {
+    font-size: 0.625rem; /* 10px */
+  }
+
+  .AppSmallText-1 {
     font-size: 0.625rem;
-    /* 10px */
+  }
+
+  .AppTitle-1 {
+    font-size: 5.6rem;
   }
 }
+
+/* Large desktops */
+@media screen and (min-width: 1440px) {
+  .AppYear {
+    font-size: 0.8rem;
+    padding: 0.3rem 1.2rem;
+    letter-spacing: -0.05em;
+  }
+}
+

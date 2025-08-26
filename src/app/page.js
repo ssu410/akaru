@@ -1,7 +1,31 @@
-import Header from "@/components/layout/Header";
+"use client";
 import { ArrowIcon, SmallArrowIcon } from "@/components/icon";
-
+import "@/styles/main.css";
+import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 export default function Home() {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
+    ease: "none",
+    });
+
+    const homeSticky = document.querySelector(".HomeFeaturedProjects-itemsInner");
+    const homeStickyHeight = homeSticky.offsetWidth;
+    tl.to(".HomeSticky-step1", {
+      x: `-${homeStickyHeight}px`, // .HomeSticky 의 height 만큼 왼쪽으로 이동
+    })
+    ScrollTrigger.create({
+      trigger: ".HomeSticky-step1",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      // markers: true,
+      animation: tl ,
+    });
+  }, []);
   return (
     <>
       <main className="Page">
@@ -9,7 +33,7 @@ export default function Home() {
           <div className="HomePage">
             <div className="HomeSticky">
               <div className="HomeSticky-wrap">
-                <div className="HomeSticky-wrap-inner">
+                <div className="HomeSticky-wrapInner">
                   <div className="HomeSticky-step1">
                     <section className="HomeHero">
                       <div className="HomeHero-content">
@@ -133,20 +157,22 @@ export default function Home() {
                                 <path d="M84.4882 0.957886H157V374.269C157 395.609 139.723 412.911 118.415 412.911H38.9419C17.6338 412.911 0.356934 395.609 0.356934 374.269V0.957886H72.8691V384.074V384.074C79.2861 384.074 84.4882 378.872 84.4882 372.455V0.957886Z"></path>
                               </svg>
                             </div>
-                            <span className="hidden">
+                            <span className="screen-hidden">
                               Akaru, creative web agency-hidden
                             </span>
                           </h1>
                           <div className="HomeHero-text">
                             <div className="HomeHero-textFakeTitle"></div>
                             <p className="SplitText AnimatedSplitText HomeHero-textText">
-                              With a focus on precision expertise, our Lyon web
-                              agency brings together daring innovation and a
-                              meticulous eye for detail to deliver exceptional
-                              websites and designs.
+                              <span>
+                                With a focus on precision expertise, our Lyon
+                                web agency brings together daring innovation and
+                                a meticulous eye for detail to deliver
+                                exceptional websites and designs.
+                              </span>
                             </p>
                           </div>
-                          <div className="HomeHero-bottom">
+                          <div className="HomeHero-footer">
                             <ul className="HomeHero-socials">
                               <li className="HomeHero-social">
                                 <a
@@ -185,42 +211,43 @@ export default function Home() {
                         </div>
                       </div>
                     </section>
-                    <div className="HomeProjects">
-                      <div className="HomeProjects-items">
-                        <div className="HomeProjects-itemsInner">
-                          <div className="HomeProjectItem">
-                            <div className="HomeProjectItem-inner">
-                              <div className="HomeProjectItem-background"></div>
-                              <a className="HomeProjectItem-imageContainer">
-                                <div className="HomeProjectItem-imageContainerInner">
+                    <div className="HomeFeaturedProject">
+                      <div className="HomeFeaturedProject-items">
+                        <div className="HomeFeaturedProjects-itemsInner">
+                          <div className="HomeFeaturedProjectItem">
+                            <div className="HomeFeaturedProjectItem-inner">
+                              <div className="HomeFeaturedProjectItem-background --green"></div>
+                              <a className="HomeFeaturedProjectItem-imageContainer">
+                                <div className="HomeFeaturedProjectItem-imageContainerInner">
                                   <img
+                                    className="AppImage-image"
                                     src="https://cdn.sanity.io/images/zvxprgaj/production/9b542e8283db7dcce8bdb93f088b7c0ab00eb880-3600x1720.jpg?w=1014&h=570&q=80&fit=crop&auto=format"
                                     alt=""
                                   />
                                 </div>
                               </a>
-                              <div className="HomeProjectItem-content">
-                                <div className="HomeProjectItem-contentHeader">
-                                  <div className="HomeProjectItem-year">
+                              <div className="HomeFeaturedProjectItem-content">
+                                <div className="HomeFeaturedProjectItem-contentHeader">
+                                  <div className="HomeFeaturedProjectItem-year AppYear">
                                     <span>2025</span>
                                   </div>
-                                  <div className="HomeProjectItem-details">
-                                    <div className="HomeProjectItem-detail">
+                                  <div className="HomeFeaturedProjectItem-details">
+                                    <div className="HomeFeaturedProjectItem-detail SmallText-1 --dark --ttu">
                                       <span>Art Direction</span>
                                     </div>
-                                    <div className="HomeProjectItem-detail">
+                                    <div className="HomeFeaturedProjectItem-detail SmallText-1 --dark --ttu">
                                       <span>Web Design</span>
                                     </div>
                                   </div>
                                 </div>
-                                <div className="HomeProjectItem-titleContainer">
-                                  <div className="SplitText AnimatedSplitText HomeProjectItem-title">
+                                <div className="HomeFeaturedProjectItem-titleContainer">
+                                  <div className="SplitText AnimatedSplitText HomeFeaturedProjectItem-title AppTitle-1 --dark">
                                     Pikko
                                   </div>
                                 </div>
                                 <a
                                   href="projects/Pikko"
-                                  className="HomeProjectItem-button AppButton AppLink"
+                                  className="HomeFeaturedProjectItem-button AppButton AppLink --ttu"
                                 >
                                   <div className="AppButton-border"></div>
                                   <div className="AppButton-svgWrap">
@@ -237,43 +264,46 @@ export default function Home() {
                                     </div>
                                   </div>
                                 </a>
-                                <div className="HomeProjectItem-index">01</div>
+                                <div className="HomeFeaturedProjectItem-index SmallText-1 --dark">
+                                  01
+                                </div>
                               </div>
                             </div>
                           </div>
-                          <div className="HomeProjectItem">
-                            <div className="HomeProjectItem-inner">
-                              <div className="HomeProjectItem-background"></div>
-                              <a className="HomeProjectItem-imageContainer">
-                                <div className="HomeProjectItem-imageContainerInner">
+                          <div className="HomeFeaturedProjectItem">
+                            <div className="HomeFeaturedProjectItem-inner">
+                              <div className="HomeFeaturedProjectItem-background --pink"></div>
+                              <a className="HomeFeaturedProjectItem-imageContainer">
+                                <div className="HomeFeaturedProjectItem-imageContainerInner">
                                   <img
+                                    className="AppImage-image"
                                     src="https://cdn.sanity.io/images/zvxprgaj/production/01706a824075350ebb905e32a43bad86512f4a71-3600x1720.jpg?w=1014&h=570&q=80&fit=crop&auto=format"
                                     alt=""
                                   />
                                 </div>
                               </a>
-                              <div className="HomeProjectItem-content">
-                                <div className="HomeProjectItem-contentHeader">
-                                  <div className="HomeProjectItem-year">
+                              <div className="HomeFeaturedProjectItem-content">
+                                <div className="HomeFeaturedProjectItem-contentHeader">
+                                  <div className="HomeFeaturedProjectItem-year AppYear">
                                     <span>2025</span>
                                   </div>
-                                  <div className="HomeProjectItem-details">
-                                    <div className="HomeProjectItem-detail">
+                                  <div className="HomeFeaturedProjectItem-details">
+                                    <div className="HomeFeaturedProjectItem-detail SmallText-1 --dark --ttu">
                                       <span>Art Direction</span>
                                     </div>
-                                    <div className="HomeProjectItem-detail">
+                                    <div className="HomeFeaturedProjectItem-detail SmallText-1 --dark --ttu">
                                       <span>Web Design</span>
                                     </div>
                                   </div>
                                 </div>
-                                <div className="HomeProjectItem-titleContainer">
-                                  <div className="SplitText AnimatedSplitText HomeProjectItem-title">
+                                <div className="HomeFeaturedProjectItem-titleContainer">
+                                  <div className="SplitText AnimatedSplitText HomeFeaturedProjectItem-title AppTitle-1 --dark">
                                     Pikko
                                   </div>
                                 </div>
                                 <a
                                   href="projects/Pikko"
-                                  className="HomeProjectItem-button AppButton AppLink"
+                                  className="HomeFeaturedProjectItem-button AppButton AppLink --ttu"
                                 >
                                   <div className="AppButton-border"></div>
                                   <div className="AppButton-svgWrap">
@@ -290,42 +320,46 @@ export default function Home() {
                                     </div>
                                   </div>
                                 </a>
+                                <div className="HomeFeaturedProjectItem-index SmallText-1 --dark">
+                                  01
+                                </div>
                               </div>
                             </div>
                           </div>
-                          <div className="HomeProjectItem">
-                            <div className="HomeProjectItem-inner">
-                              <div className="HomeProjectItem-background"></div>
-                              <a className="HomeProjectItem-imageContainer">
-                                <div className="HomeProjectItem-imageContainerInner">
+                          <div className="HomeFeaturedProjectItem">
+                            <div className="HomeFeaturedProjectItem-inner">
+                              <div className="HomeFeaturedProjectItem-background --blue"></div>
+                              <a className="HomeFeaturedProjectItem-imageContainer">
+                                <div className="HomeFeaturedProjectItem-imageContainerInner">
                                   <img
+                                    className="AppImage-image"
                                     src="https://cdn.sanity.io/images/zvxprgaj/production/46f147c8ec6d7d28b4a64a0eebfe29540f54410f-3600x1720.jpg?w=1014&h=570&q=80&fit=crop&auto=format"
                                     alt=""
                                   />
                                 </div>
                               </a>
-                              <div className="HomeProjectItem-content">
-                                <div className="HomeProjectItem-contentHeader">
-                                  <div className="HomeProjectItem-year">
+                              <div className="HomeFeaturedProjectItem-content">
+                                <div className="HomeFeaturedProjectItem-contentHeader">
+                                  <div className="HomeFeaturedProjectItem-year AppYear">
                                     <span>2025</span>
                                   </div>
-                                  <div className="HomeProjectItem-details">
-                                    <div className="HomeProjectItem-detail">
+                                  <div className="HomeFeaturedProjectItem-details">
+                                    <div className="HomeFeaturedProjectItem-detail SmallText-1 --dark --ttu">
                                       <span>Art Direction</span>
                                     </div>
-                                    <div className="HomeProjectItem-detail">
+                                    <div className="HomeFeaturedProjectItem-detail SmallText-1 --dark --ttu">
                                       <span>Web Design</span>
                                     </div>
                                   </div>
                                 </div>
-                                <div className="HomeProjectItem-titleContainer">
-                                  <div className="SplitText AnimatedSplitText HomeProjectItem-title">
+                                <div className="HomeFeaturedProjectItem-titleContainer">
+                                  <div className="SplitText AnimatedSplitText HomeFeaturedProjectItem-title AppTitle-1 --dark">
                                     Pikko
                                   </div>
                                 </div>
                                 <a
                                   href="projects/Pikko"
-                                  className="HomeProjectItem-button AppButton AppLink"
+                                  className="HomeFeaturedProjectItem-button AppButton AppLink --ttu"
                                 >
                                   <div className="AppButton-border"></div>
                                   <div className="AppButton-svgWrap">
@@ -342,7 +376,9 @@ export default function Home() {
                                     </div>
                                   </div>
                                 </a>
-                                <div className="HomeProjectItem-index">03</div>
+                                <div className="HomeFeaturedProjectItem-index SmallText-1 --dark">
+                                  01
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -371,10 +407,61 @@ export default function Home() {
                                 </div>
                                 <div className="ProjectItem-hover">
                                   <div className="HomeProjectItem-hoverHeader">
+                                    <span className="HomeProjectItem-hoverCategory SmallText-1 --dark">
+                                      Art Direction
+                                    </span>
+                                    <span className="HomeProjectItem-hoverYear AppYear SmallText-1 --dark">
+                                      2024
+                                    </span>
+                                  </div>
+                                  <div className="HomeProjectItem-hoverContent">
+                                    <div className="HomeProjectItem-hoverTitle">
+                                      <span>Moon studio</span>
+                                    </div>
+                                    <div className="HomeProjectItem-hoverButton">
+                                      <Link
+                                        href="/projects/moon-studio"
+                                        className="AppButton AppLink"
+                                      >
+                                        <div className="AppButton-border"></div>
+                                        <div className="AppButton-svgWrap">
+                                          <div className="AppButton-svgWrapDot"></div>
+                                          <div className="AppButton-arrowWrap">
+                                            <span className="AppSvg AppButton-svg">
+                                              <ArrowIcon />
+                                            </span>
+                                          </div>
+                                          <div className="AppButton-arrowWrap --hover">
+                                            <span className="AppSvg AppButton-svg">
+                                              <ArrowIcon />
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </Link>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                            <div className="Homepage-ProjectItem project-item">
+                              <a
+                                href="projects/moon-studio"
+                                className="AppLink HomePage-projectItemLink"
+                              >
+                                <div className="ProjectItem-imageContainer">
+                                  <div className="ProjectItem-image">
+                                    <img
+                                      src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                                <div className="ProjectItem-hover">
+                                  <div className="HomeProjectItem-hoverHeader">
                                     <span className="HomeProjectItem-hoverCategory">
                                       Art Direction
                                     </span>
-                                    <span className="HomeProjectItem-hoverYear">
+                                    <span className="HomeProjectItem-hoverYear AppYear">
                                       2024
                                     </span>
                                   </div>
@@ -425,58 +512,7 @@ export default function Home() {
                                     <span className="HomeProjectItem-hoverCategory">
                                       Art Direction
                                     </span>
-                                    <span className="HomeProjectItem-hoverYear">
-                                      2024
-                                    </span>
-                                  </div>
-                                  <div className="HomeProjectItem-hoverContent">
-                                    <div className="HomeProjectItem-hoverTitle">
-                                      <span>Moon studio</span>
-                                    </div>
-                                    <div className="HomeProjectItem-hoverButton">
-                                      <a
-                                        href="projects/moon-studio"
-                                        className="AppButton AppLink"
-                                      >
-                                        <div className="AppButton-border"></div>
-                                        <div className="AppButton-svgWrap">
-                                          <div className="AppButton-svgWrapDot"></div>
-                                          <div className="AppButton-arrowWrap">
-                                            <span className="AppSvg AppButton-svg">
-                                              <ArrowIcon />
-                                            </span>
-                                          </div>
-                                          <div className="AppButton-arrowWrap --hover">
-                                            <span className="AppSvg AppButton-svg">
-                                              <ArrowIcon />
-                                            </span>
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="Homepage-ProjectItem project-item">
-                              <a
-                                href="projects/moon-studio"
-                                className="AppLink HomePage-projectItemLink"
-                              >
-                                <div className="ProjectItem-imageContainer">
-                                  <div className="ProjectItem-image">
-                                    <img
-                                      src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
-                                      alt=""
-                                    />
-                                  </div>
-                                </div>
-                                <div className="ProjectItem-hover">
-                                  <div className="HomeProjectItem-hoverHeader">
-                                    <span className="HomeProjectItem-hoverCategory">
-                                      Art Direction
-                                    </span>
-                                    <span className="HomeProjectItem-hoverYear">
+                                    <span className="HomeProjectItem-hoverYear AppYear">
                                       2024
                                     </span>
                                   </div>
@@ -1898,7 +1934,7 @@ export default function Home() {
                     </div>
                     <a className="AppList AppButton HomeAgency-introButton">
                       <div className="AppButton-border"></div>
-                      <div className="AppButton-label AppSmallText-1">
+                      <div className="AppButton-label SmallText-1">
                         <span>Our agency</span>
                       </div>
                       <div className="AppButton-svgWrap">
@@ -2041,7 +2077,7 @@ export default function Home() {
                   <div className="Contact-item">
                     <div className="AppList Contact-phone">
                       <a
-                        className="AppLink AppSmallText-1 --white"
+                        className="AppLink SmallText-1 --white"
                         href="mailto:contact@akaru.fr"
                         target="_blank"
                         rel="noreferrer"
@@ -2049,7 +2085,7 @@ export default function Home() {
                         contact@akaru.fr
                       </a>
                       <a
-                        className="AppLink AppSmallText-1 --white"
+                        className="AppLink SmallText-1 --white"
                         href="mailto:contact@akaru.fr"
                         target="_blank"
                         rel="noreferrer"
@@ -2058,7 +2094,7 @@ export default function Home() {
                       </a>
                       <div>
                         <a
-                          className="AppLink AppSmallText-1"
+                          className="AppLink SmallText-1"
                           href="tel:0482338510"
                         >
                           04 82 33 85 10

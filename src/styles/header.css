@@ -50,6 +50,7 @@
   padding: 0 2rem 2rem;
   pointer-events: auto;
   position: fixed;
+  pointer-events: none;
   top: 0;
   width: 100vw;
   z-index: 3;
