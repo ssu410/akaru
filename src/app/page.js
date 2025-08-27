@@ -9,21 +9,94 @@ export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline({
-    ease: "none",
+      ease: "none",
     });
 
-    const homeSticky = document.querySelector(".HomeFeaturedProjects-itemsInner");
+    const homeFeaturedProjectItemArray = [
+      {
+        itemX: "0",
+        innerY: "3rem",
+        innerScale: "0.6",
+        imageScale: "1.4",
+      },
+      {
+        itemX: "-31vw",
+        innerY: "15rem",
+        innerScale: "0.4",
+        imageScale: "1.6",
+      },
+      {
+        itemX: "-87vw",
+        innerY: "22rem",
+        innerScale: "0.2",
+        imageScale: "1.8",
+      },
+    ];
+
+    
+    const homeSticky = document.querySelector(
+      ".HomeFeaturedProjects-itemsInner"
+    );
     const homeStickyHeight = homeSticky.offsetWidth;
-    tl.to(".HomeSticky-step1", {
-      x: `-${homeStickyHeight}px`, // .HomeSticky 의 height 만큼 왼쪽으로 이동
-    })
+   
+    const step1Tl = gsap.timeline({});
+
+    // 각 아이템별로 개별 타임라인 생성하여 순차적으로 실행
+    homeFeaturedProjectItemArray.forEach((itemData, index) => {
+      const item = `.HomeFeaturedProjectItem:nth-child(${index + 1})`;
+      const imageContainer = `${item} .HomeFeaturedProjectItem-imageContainerInner`;
+      const image = `${item} .HomeFeaturedProjectItem-image`;
+      
+      tl.to(".HomeSticky-step1", {
+        x: `-${homeStickyHeight}px`, // .HomeSticky 의 height 만큼 왼쪽으로 이동
+      });
+
+      step1Tl
+        // 아이템 X축 이동
+        .fromTo(
+          item,
+          { x: itemData.itemX },
+          { x: "0", duration: 3, ease: "power2.inOut" },
+          0
+        )       
+        .fromTo(
+          imageContainer,
+          {
+            transformOrigin: "left",
+            y: itemData.innerY,
+            scale: itemData.innerScale,
+          },
+          { y: "0", scale: "1", duration: 3, ease: "power2.inOut" },
+          { stagger: 0.2 }
+        )      
+        .fromTo(
+          image,
+          {
+            transformOrigin: "center center",
+            scale: itemData.imageScale,
+          },
+          { scale: "1", duration: 3, ease: "power2.inOut" },
+          0
+        );
+    });
+
+
     ScrollTrigger.create({
       trigger: ".HomeSticky-step1",
       start: "top top",
       end: "bottom top",
-      scrub: true,
+      scrub: 1.6,
       // markers: true,
-      animation: tl ,
+      animation: tl,
+    });
+
+    ScrollTrigger.create({
+      trigger: ".HomeSticky-step1",
+      start: "top top",
+      end: "1200vh center",
+      scrub: 1,
+      // markers: true,
+      animation: step1Tl,
     });
   }, []);
   return (
@@ -220,7 +293,7 @@ export default function Home() {
                               <a className="HomeFeaturedProjectItem-imageContainer">
                                 <div className="HomeFeaturedProjectItem-imageContainerInner">
                                   <img
-                                    className="AppImage-image"
+                                    className="AppImage-image HomeFeaturedProjectItem-image"
                                     src="https://cdn.sanity.io/images/zvxprgaj/production/9b542e8283db7dcce8bdb93f088b7c0ab00eb880-3600x1720.jpg?w=1014&h=570&q=80&fit=crop&auto=format"
                                     alt=""
                                   />
@@ -276,7 +349,7 @@ export default function Home() {
                               <a className="HomeFeaturedProjectItem-imageContainer">
                                 <div className="HomeFeaturedProjectItem-imageContainerInner">
                                   <img
-                                    className="AppImage-image"
+                                    className="AppImage-image HomeFeaturedProjectItem-image"
                                     src="https://cdn.sanity.io/images/zvxprgaj/production/01706a824075350ebb905e32a43bad86512f4a71-3600x1720.jpg?w=1014&h=570&q=80&fit=crop&auto=format"
                                     alt=""
                                   />
@@ -332,7 +405,7 @@ export default function Home() {
                               <a className="HomeFeaturedProjectItem-imageContainer">
                                 <div className="HomeFeaturedProjectItem-imageContainerInner">
                                   <img
-                                    className="AppImage-image"
+                                    className="AppImage-image HomeFeaturedProjectItem-image"
                                     src="https://cdn.sanity.io/images/zvxprgaj/production/46f147c8ec6d7d28b4a64a0eebfe29540f54410f-3600x1720.jpg?w=1014&h=570&q=80&fit=crop&auto=format"
                                     alt=""
                                   />
