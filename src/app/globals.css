@@ -82,58 +82,219 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
-/* ========================================
-   TYPOGRAPHY CLASSES
-   ======================================== */
-.SmallText-1 {
-  font-family: "Alliance Platt", serif;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  line-height: 1.4;
-  font-size: 0.625rem;
-  text-transform: uppercase;
+html {
+  background: #0e0e0e;
+  color: #fff;
+  font-family: Alliance Neue, sans-serif;
+  min-height: 100%;
+  scrollbar-width: none !important
 }
 
-.SmallText-2 {
-  font-family: "Alliance Platt", serif;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: inherit;
-  line-height: 1.4;
-  font-size: 0.75rem;
+html *,
+html :after,
+html :before {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent
 }
 
-.Text-1 {
-  font-family: "Alliance Platt", serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: inherit;
-  line-height: normal;
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 2.6666666667vw;
+    font-size: calc(2.66667vw - var(--sbw)/37.5)
+  }
 }
 
-.Text-2 {
-  font-size: 2rem;
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  html {
+    font-size: .9765625vw;
+    font-size: calc(.97656vw - var(--sbw)/102.4)
+  }
 }
 
-.Text-16 {
-  font-size: 4.8rem;
+@media screen and (min-width: 1080px) {
+  html {
+    font-size: .6944444444vw;
+    font-size: calc(.69444vw - var(--sbw)/144)
+  }
 }
 
-.AppSmallText-1 {
-  font-family: "Alliance Platt", serif;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-  line-height: 1.4;
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: .6944444444vw;
+    font-size: calc(.69444vw - var(--sbw)/144)
+  }
 }
 
-.AppTitle-1 {
-  font-family: "Alliance Platt", serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: inherit;
-  line-height: normal;
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: .625vw;
+    font-size: calc(.625vw - var(--sbw)/160)
+  }
+}
+
+html ::-webkit-scrollbar {
+  background: transparent;
+  width: 0
+}
+
+::-moz-selection {
+  background: #e49366;
+  color: #0e0e0e
+}
+
+::selection {
+  background: #e49366;
+  color: #0e0e0e
+}
+
+.--bg-terra ::-moz-selection {
+  background: #bfccd8
+}
+
+.--bg-terra ::selection {
+  background: #bfccd8
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100%
+}
+
+body.cursor-wait,
+body.cursor-wait * {
+  cursor: wait
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  padding: 0
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+a.nuxt-link-exact-active {
+  pointer-events: none
+}
+
+@media screen and (min-width: 769px) {
+  .--mobile-only {
+    display: none
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--tablet-up-only {
+    display: none
+  }
+}
+
+.no-drag {
+  -webkit-user-drag: none
+}
+
+.drag {
+  -webkit-user-drag: auto
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none
+}
+
+.select {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto
+}
+
+.no-pointer {
+  pointer-events: none
+}
+
+.pointer {
+  pointer-events: auto
+}
+
+.no-interaction {
+  -webkit-user-drag: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none
+}
+
+.interaction {
+  -webkit-user-drag: auto;
+  pointer-events: auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto
+}
+
+.scrollable-x {
+  overflow-x: auto
+}
+
+.scrollable-x::-webkit-scrollbar {
+  height: 1px
+}
+
+.scrollable-x::-webkit-scrollbar-thumb {
+  background: #fff
+}
+
+.scrollable-x::-webkit-scrollbar-track {
+  background: #0e0e0e
+}
+
+.scrollable-y {
+  overflow-y: auto
+}
+
+.scrollable-y::-webkit-scrollbar {
+  width: 4px
+}
+
+.scrollable-y::-webkit-scrollbar-thumb {
+  background: #fff
+}
+
+.scrollable-y::-webkit-scrollbar-track {
+  background: #0e0e0e
+}
+
+html.lenis {
+  height: auto
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none
+}
+
+.--dark {
+  color: #0e0e0e;
 }
 
 /* ========================================
@@ -141,6 +302,10 @@ body {
    ======================================== */
 .--ttu {
   text-transform: uppercase;
+}
+
+.--tac {
+  text-align: center;
 }
 
 .--dark {
@@ -181,66 +346,6 @@ body {
   width: 100%;
 }
 
-/* ========================================
-   MEDIA QUERIES
-   ======================================== */
-
-/* Mobile landscape and small tablets */
-@media screen and (min-width: 767px) {
-  .Text-1 {
-    font-size: 1.6rem;
-  }
-
-  .SmallText-2 {
-    font-size: 0.75rem; /* 12px */
-  }
-}
-
-/* Mobile portrait */
-@media screen and (max-width: 768px) {
-  .Text-2 {
-    font-size: 1.6rem;
-  }
-}
-
-/* Small tablets and large mobile */
-@media screen and (min-width: 769px) {
-  .AppSmallText-1 {
-    font-size: 0.4rem;
-  }
-
-  .AppTitle-1 {
-    font-size: 3.6rem;
-  }
-}
-
-/* Large tablets and small desktops */
-@media screen and (min-width: 1080px) {
-  .Text-1 {
-    font-size: 1.6rem;
-  }
-
-  .Text-2 {
-    font-size: 2rem; /* 32px */
-  }
-
-  .Text-16 {
-    font-size: 6rem;
-  }
-
-  .SmallText-1 {
-    font-size: 0.625rem; /* 10px */
-  }
-
-  .AppSmallText-1 {
-    font-size: 0.625rem;
-  }
-
-  .AppTitle-1 {
-    font-size: 5.6rem;
-  }
-}
-
 /* Large desktops */
 @media screen and (min-width: 1440px) {
   .AppYear {
@@ -250,3 +355,3557 @@ body {
   }
 }
 
+.AppTitle-1 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-1 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-1 {
+    font-size: 96px;
+    font-size: 9.6rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-1 {
+    font-size: 96px;
+    font-size: 9.6rem
+  }
+}
+
+.AppTitle-1 b,
+.AppTitle-1 strong {
+  font-weight: 600
+}
+
+.AppTitle-1 em,
+.AppTitle-1 i {
+  font-style: italic
+}
+
+.AppTitle-1 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-1.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-1.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-1.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-1.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-1.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-1.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-1 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-1 a {
+  text-decoration: underline
+}
+
+.AppTitle-2 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-2 {
+    font-size: 64px;
+    font-size: 6.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-2 {
+    font-size: 164px;
+    font-size: 16.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-2 {
+    font-size: 164px;
+    font-size: 16.4rem
+  }
+}
+
+.AppTitle-2 b,
+.AppTitle-2 strong {
+  font-weight: 600
+}
+
+.AppTitle-2 em,
+.AppTitle-2 i {
+  font-style: italic
+}
+
+.AppTitle-2 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-2.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-2.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-2.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-2.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-2.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-2.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-2 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-2 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-2 {
+    font-size: 12.8rem
+  }
+}
+
+.AppTitle-3 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-3 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-3 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-3 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+.AppTitle-3 b,
+.AppTitle-3 strong {
+  font-weight: 600
+}
+
+.AppTitle-3 em,
+.AppTitle-3 i {
+  font-style: italic
+}
+
+.AppTitle-3 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-3.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-3.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-3.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-3.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-3.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-3.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-3 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-3 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-3 {
+    font-size: 2.4rem
+  }
+}
+
+.AppTitle-4 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-4 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-4 {
+    font-size: 96px;
+    font-size: 9.6rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-4 {
+    font-size: 96px;
+    font-size: 9.6rem
+  }
+}
+
+.AppTitle-4 b,
+.AppTitle-4 strong {
+  font-weight: 600
+}
+
+.AppTitle-4 em,
+.AppTitle-4 i {
+  font-style: italic
+}
+
+.AppTitle-4 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-4.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-4.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-4.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-4.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-4.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-4.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-4 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-4 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-4 {
+    font-size: 6.4rem
+  }
+}
+
+.AppTitle-5 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: 1
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-5 {
+    font-size: 60px;
+    font-size: 6rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-5 {
+    font-size: 164px;
+    font-size: 16.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-5 {
+    font-size: 164px;
+    font-size: 16.4rem
+  }
+}
+
+.AppTitle-5 b,
+.AppTitle-5 strong {
+  font-weight: 600
+}
+
+.AppTitle-5 em,
+.AppTitle-5 i {
+  font-style: italic
+}
+
+.AppTitle-5 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-5.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-5.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-5.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-5.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-5.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-5.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-5 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-5 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-5 {
+    font-size: 12.8rem;
+    line-height: 13.6rem
+  }
+}
+
+.AppTitle-6 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-6 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-6 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-6 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+.AppTitle-6 b,
+.AppTitle-6 strong {
+  font-weight: 600
+}
+
+.AppTitle-6 em,
+.AppTitle-6 i {
+  font-style: italic
+}
+
+.AppTitle-6 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-6.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-6.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-6.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-6.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-6.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-6.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-6 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-6 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-6 {
+    font-size: 2.4rem
+  }
+}
+
+.AppTitle-7 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-7 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-7 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-7 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+.AppTitle-7 b,
+.AppTitle-7 strong {
+  font-weight: 600
+}
+
+.AppTitle-7 em,
+.AppTitle-7 i {
+  font-style: italic
+}
+
+.AppTitle-7 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-7.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-7.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-7.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-7.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-7.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-7.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-7 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-7 a {
+  text-decoration: underline
+}
+
+.AppTitle-8 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-8 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-8 {
+    font-size: 164px;
+    font-size: 16.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-8 {
+    font-size: 164px;
+    font-size: 16.4rem
+  }
+}
+
+.AppTitle-8 b,
+.AppTitle-8 strong {
+  font-weight: 600
+}
+
+.AppTitle-8 em,
+.AppTitle-8 i {
+  font-style: italic
+}
+
+.AppTitle-8 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-8.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-8.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-8.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-8.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-8.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-8.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-8 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-8 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-8 {
+    font-size: 12.8rem
+  }
+}
+
+.AppTitle-9 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-9 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-9 {
+    font-size: 54px;
+    font-size: 5.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-9 {
+    font-size: 54px;
+    font-size: 5.4rem
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-9 {
+    font-size: 2.4rem
+  }
+}
+
+.AppTitle-10 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: 1.05
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-10 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-10 {
+    font-size: 82px;
+    font-size: 8.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-10 {
+    font-size: 82px;
+    font-size: 8.2rem
+  }
+}
+
+.AppTitle-10 b,
+.AppTitle-10 strong {
+  font-weight: 600
+}
+
+.AppTitle-10 em,
+.AppTitle-10 i {
+  font-style: italic
+}
+
+.AppTitle-10 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-10.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-10.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-10.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-10.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-10.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-10.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-10 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-10 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-10 {
+    font-size: 6.4rem
+  }
+}
+
+.AppTitle-11 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-11 {
+    font-size: 42px;
+    font-size: 4.2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-11 {
+    font-size: 145px;
+    font-size: 14.5rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-11 {
+    font-size: 145px;
+    font-size: 14.5rem
+  }
+}
+
+.AppTitle-11 b,
+.AppTitle-11 strong {
+  font-weight: 600
+}
+
+.AppTitle-11 em,
+.AppTitle-11 i {
+  font-style: italic
+}
+
+.AppTitle-11 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-11.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-11.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-11.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-11.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-11.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-11.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-11 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-11 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppTitle-11 {
+    font-size: 12.8rem
+  }
+}
+
+.AppTitle-12 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: inherit;
+  line-height: normal;
+  line-height: .8em
+}
+
+@media screen and (max-width: 768px) {
+  .AppTitle-12 {
+    font-size: 90px;
+    font-size: 9rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppTitle-12 {
+    font-size: 209px;
+    font-size: 20.9rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppTitle-12 {
+    font-size: 209px;
+    font-size: 20.9rem
+  }
+}
+
+.AppTitle-12 b,
+.AppTitle-12 strong {
+  font-weight: 600
+}
+
+.AppTitle-12 em,
+.AppTitle-12 i {
+  font-style: italic
+}
+
+.AppTitle-12 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-12.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppTitle-12.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppTitle-12.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppTitle-12.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppTitle-12.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppTitle-12.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppTitle-12 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppTitle-12 a {
+  text-decoration: underline
+}
+
+.AppText-1 {
+  font-family: 'Alliance Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-1 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-1 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-1 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+.AppText-1 b,
+.AppText-1 strong {
+  font-weight: 600
+}
+
+.AppText-1 em,
+.AppText-1 i {
+  font-style: italic
+}
+
+.AppText-1 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-1.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-1.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-1.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-1.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-1.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-1.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-1 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-1 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-1 {
+    font-family: Alliance Neue, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: inherit;
+    line-height: normal
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) and (max-width:768px) {
+  .AppText-1 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) and (min-width:769px) {
+  .AppText-1 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) and (min-width:1080px) {
+  .AppText-1 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+.AppText-2 {
+  font-family: 'Alliance Platt', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-2 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-2 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-2 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+.AppText-2 b,
+.AppText-2 strong {
+  font-weight: 600
+}
+
+.AppText-2 em,
+.AppText-2 i {
+  font-style: italic
+}
+
+.AppText-2 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-2.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-2.--styled-bullets .item {
+  font-family: Alliance Platt, serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-2.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-2.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-2.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-2.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-2 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-2 a {
+  text-decoration: underline
+}
+
+.AppText-3 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: 1
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-3 {
+    font-size: 40px;
+    font-size: 4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-3 {
+    font-size: 72px;
+    font-size: 7.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-3 {
+    font-size: 72px;
+    font-size: 7.2rem
+  }
+}
+
+.AppText-3 b,
+.AppText-3 strong {
+  font-weight: 600
+}
+
+.AppText-3 em,
+.AppText-3 i {
+  font-style: italic
+}
+
+.AppText-3 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-3.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-3.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-3.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-3.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-3.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-3.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-3 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-3 a {
+  text-decoration: underline
+}
+
+.AppText-4 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-4 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-4 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-4 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+.AppText-4 b,
+.AppText-4 strong {
+  font-weight: 600
+}
+
+.AppText-4 em,
+.AppText-4 i {
+  font-style: italic
+}
+
+.AppText-4 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-4.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-4.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-4.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-4.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-4.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-4.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-4 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-4 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-4 {
+    font-size: 3.2rem
+  }
+}
+
+.AppText-5 {
+  font-family: Alliance Neue, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-5 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-5 {
+    font-size: 20px;
+    font-size: 2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-5 {
+    font-size: 20px;
+    font-size: 2rem
+  }
+}
+
+.AppText-5 b,
+.AppText-5 strong {
+  font-weight: 600
+}
+
+.AppText-5 em,
+.AppText-5 i {
+  font-style: italic
+}
+
+.AppText-5 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-5.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-5.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-5.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-5.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-5.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-5.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-5 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-5 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-5 {
+    font-size: 1.6rem
+  }
+}
+
+.AppText-6 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-6 {
+    font-size: 14px;
+    font-size: 1.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-6 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-6 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+.AppText-6 b,
+.AppText-6 strong {
+  font-weight: 600
+}
+
+.AppText-6 em,
+.AppText-6 i {
+  font-style: italic
+}
+
+.AppText-6 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-6.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-6.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-6.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-6.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-6.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-6.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-6 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-6 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-6 {
+    font-size: 1.4rem
+  }
+}
+
+.AppText-7 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-7 {
+    font-size: 12px;
+    font-size: 1.2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-7 {
+    font-size: 12px;
+    font-size: 1.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-7 {
+    font-size: 12px;
+    font-size: 1.2rem
+  }
+}
+
+.AppText-7 b,
+.AppText-7 strong {
+  font-weight: 600
+}
+
+.AppText-7 em,
+.AppText-7 i {
+  font-style: italic
+}
+
+.AppText-7 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-7.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-7.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-7.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-7.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-7.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-7.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-7 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-7 a {
+  text-decoration: underline
+}
+
+.AppText-8 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-8 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-8 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-8 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+.AppText-8 b,
+.AppText-8 strong {
+  font-weight: 600
+}
+
+.AppText-8 em,
+.AppText-8 i {
+  font-style: italic
+}
+
+.AppText-8 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-8.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-8.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-8.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-8.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-8.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-8.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-8 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-8 a {
+  text-decoration: underline
+}
+
+.AppText-9 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-9 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-9 {
+    font-size: 30px;
+    font-size: 3rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-9 {
+    font-size: 30px;
+    font-size: 3rem
+  }
+}
+
+.AppText-9 b,
+.AppText-9 strong {
+  font-weight: 600
+}
+
+.AppText-9 em,
+.AppText-9 i {
+  font-style: italic
+}
+
+.AppText-9 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-9.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-9.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-9.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-9.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-9.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-9.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-9 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-9 a {
+  text-decoration: underline
+}
+
+.AppText-10 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-10 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-10 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-10 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+.AppText-10 b,
+.AppText-10 strong {
+  font-weight: 600
+}
+
+.AppText-10 em,
+.AppText-10 i {
+  font-style: italic
+}
+
+.AppText-10 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-10.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-10.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-10.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-10.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-10.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-10.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-10 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-10 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-10 {
+    font-size: 3.2rem
+  }
+}
+
+.AppText-11 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: 1.85rem
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-11 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-11 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-11 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+.AppText-11 b,
+.AppText-11 strong {
+  font-weight: 600
+}
+
+.AppText-11 em,
+.AppText-11 i {
+  font-style: italic
+}
+
+.AppText-11 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-11.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-11.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-11.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-11.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-11.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-11.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-11 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-11 a {
+  text-decoration: underline
+}
+
+.AppText-12 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-12 {
+    font-size: 14px;
+    font-size: 1.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-12 {
+    font-size: 14px;
+    font-size: 1.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-12 {
+    font-size: 14px;
+    font-size: 1.4rem
+  }
+}
+
+.AppText-12 b,
+.AppText-12 strong {
+  font-weight: 600
+}
+
+.AppText-12 em,
+.AppText-12 i {
+  font-style: italic
+}
+
+.AppText-12 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-12.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-12.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-12.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-12.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-12.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-12.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-12 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-12 a {
+  text-decoration: underline
+}
+
+.AppText-13 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-13 {
+    font-size: 14px;
+    font-size: 1.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-13 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-13 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+.AppText-13 b,
+.AppText-13 strong {
+  font-weight: 600
+}
+
+.AppText-13 em,
+.AppText-13 i {
+  font-style: italic
+}
+
+.AppText-13 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-13.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-13.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-13.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-13.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-13.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-13.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-13 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-13 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-13 {
+    font-size: 2.4rem
+  }
+}
+
+.AppText-14 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-14 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-14 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-14 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+.AppText-14 b,
+.AppText-14 strong {
+  font-weight: 600
+}
+
+.AppText-14 em,
+.AppText-14 i {
+  font-style: italic
+}
+
+.AppText-14 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-14.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-14.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-14.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-14.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-14.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-14.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-14 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-14 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-14 {
+    font-size: 1.6rem
+  }
+}
+
+.AppText-15 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-15 {
+    font-size: 20px;
+    font-size: 2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-15 {
+    font-size: 20px;
+    font-size: 2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-15 {
+    font-size: 20px;
+    font-size: 2rem
+  }
+}
+
+.AppText-15 b,
+.AppText-15 strong {
+  font-weight: 600
+}
+
+.AppText-15 em,
+.AppText-15 i {
+  font-style: italic
+}
+
+.AppText-15 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-15.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-15.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-15.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-15.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-15.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-15.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-15 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-15 a {
+  text-decoration: underline
+}
+
+.AppText-16 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-16 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-16 {
+    font-size: 64px;
+    font-size: 6.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-16 {
+    font-size: 64px;
+    font-size: 6.4rem
+  }
+}
+
+.AppText-16 b,
+.AppText-16 strong {
+  font-weight: 600
+}
+
+.AppText-16 em,
+.AppText-16 i {
+  font-style: italic
+}
+
+.AppText-16 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-16.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-16.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-16.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-16.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-16.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-16.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-16 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-16 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-16 {
+    font-size: 4.8rem
+  }
+}
+
+.AppText-17 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-17 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-17 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-17 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+.AppText-17 b,
+.AppText-17 strong {
+  font-weight: 600
+}
+
+.AppText-17 em,
+.AppText-17 i {
+  font-style: italic
+}
+
+.AppText-17 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-17.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-17.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-17.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-17.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-17.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-17.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-17 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-17 a {
+  text-decoration: underline
+}
+
+.AppText-18 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-18 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-18 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-18 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+.AppText-18 b,
+.AppText-18 strong {
+  font-weight: 600
+}
+
+.AppText-18 em,
+.AppText-18 i {
+  font-style: italic
+}
+
+.AppText-18 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-18.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-18.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-18.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-18.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-18.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-18.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-18 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-18 a {
+  text-decoration: underline
+}
+
+.AppText-19 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-19 {
+    font-size: 36px;
+    font-size: 3.6rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-19 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-19 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+.AppText-19 b,
+.AppText-19 strong {
+  font-weight: 600
+}
+
+.AppText-19 em,
+.AppText-19 i {
+  font-style: italic
+}
+
+.AppText-19 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-19.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-19.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-19.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-19.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-19.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-19.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-19 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-19 a {
+  text-decoration: underline
+}
+
+.AppText-20 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-20 {
+    font-size: 16px;
+    font-size: 1.6rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-20 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-20 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+.AppText-20 b,
+.AppText-20 strong {
+  font-weight: 600
+}
+
+.AppText-20 em,
+.AppText-20 i {
+  font-style: italic
+}
+
+.AppText-20 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-20.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-20.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-20.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-20.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-20.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-20.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-20 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-20 a {
+  text-decoration: underline
+}
+
+.AppText-21 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-21 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-21 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-21 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+.AppText-21 b,
+.AppText-21 strong {
+  font-weight: 600
+}
+
+.AppText-21 em,
+.AppText-21 i {
+  font-style: italic
+}
+
+.AppText-21 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-21.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-21.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-21.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-21.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-21.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-21.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-21 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-21 a {
+  text-decoration: underline
+}
+
+.AppText-22 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-22 {
+    font-size: 40px;
+    font-size: 4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-22 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-22 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+.AppText-22 b,
+.AppText-22 strong {
+  font-weight: 600
+}
+
+.AppText-22 em,
+.AppText-22 i {
+  font-style: italic
+}
+
+.AppText-22 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-22.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-22.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-22.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-22.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-22.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-22.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-22 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-22 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-22 {
+    font-size: 4rem
+  }
+}
+
+.AppText-23 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-23 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-23 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-23 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+.AppText-23 b,
+.AppText-23 strong {
+  font-weight: 600
+}
+
+.AppText-23 em,
+.AppText-23 i {
+  font-style: italic
+}
+
+.AppText-23 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-23.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-23.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-23.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-23.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-23.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-23.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-23 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-23 a {
+  text-decoration: underline
+}
+
+.AppText-24 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-24 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-24 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-24 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+.AppText-24 b,
+.AppText-24 strong {
+  font-weight: 600
+}
+
+.AppText-24 em,
+.AppText-24 i {
+  font-style: italic
+}
+
+.AppText-24 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-24.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-24.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-24.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-24.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-24.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-24.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-24 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-24 a {
+  text-decoration: underline
+}
+
+.AppText-25 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-25 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-25 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-25 {
+    font-size: 48px;
+    font-size: 4.8rem
+  }
+}
+
+.AppText-25 b,
+.AppText-25 strong {
+  font-weight: 600
+}
+
+.AppText-25 em,
+.AppText-25 i {
+  font-style: italic
+}
+
+.AppText-25 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-25.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-25.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-25.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-25.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-25.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-25.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-25 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-25 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-25 {
+    font-size: 3.6rem
+  }
+}
+
+.AppText-26 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-26 {
+    font-size: 18px;
+    font-size: 1.8rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-26 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-26 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+.AppText-26 b,
+.AppText-26 strong {
+  font-weight: 600
+}
+
+.AppText-26 em,
+.AppText-26 i {
+  font-style: italic
+}
+
+.AppText-26 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-26.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-26.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-26.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-26.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-26.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-26.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-26 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-26 a {
+  text-decoration: underline
+}
+
+@media screen and (min-width: 769px) and (max-width:1079px) {
+  .AppText-26 {
+    font-size: 1.8rem
+  }
+}
+
+.AppText-27 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-27 {
+    font-size: 32px;
+    font-size: 3.2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-27 {
+    font-size: 54px;
+    font-size: 5.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-27 {
+    font-size: 54px;
+    font-size: 5.4rem
+  }
+}
+
+.AppText-27 b,
+.AppText-27 strong {
+  font-weight: 600
+}
+
+.AppText-27 em,
+.AppText-27 i {
+  font-style: italic
+}
+
+.AppText-27 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-27.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-27.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-27.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-27.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-27.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-27.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-27 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-27 a {
+  text-decoration: underline
+}
+
+.AppText-28 {
+  font-family: 'Alliance Platt', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppText-28 {
+    font-size: 20px;
+    font-size: 2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppText-28 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppText-28 {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
+
+.AppText-28 b,
+.AppText-28 strong {
+  font-weight: 600
+}
+
+.AppText-28 em,
+.AppText-28 i {
+  font-style: italic
+}
+
+.AppText-28 li:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-28.--styled-bullets .list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.AppText-28.--styled-bullets .item {
+  font-family: 'Alliance Platt', serif;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  position: relative;
+  text-transform: uppercase
+}
+
+.AppText-28.--styled-bullets .item:not(:last-child) {
+  margin-bottom: .7rem
+}
+
+.AppText-28.--styled-bullets .item:before {
+  content: "/";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px
+}
+
+.AppText-28.--styled-bullets .item.even {
+  padding-right: 2rem
+}
+
+.AppText-28.--styled-bullets .breaker {
+  width: 100%
+}
+
+.AppText-28 p:not(:last-child) {
+  margin-bottom: 1.5rem
+}
+
+.AppText-28 a {
+  text-decoration: underline
+}
+
+.AppSmallText,
+.AppSmallText-1,
+.AppSmallText-2 {
+  text-transform: uppercase
+}
+
+.AppSmallText-1 {
+  font-family: 'Alliance Platt', serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -.05em;
+  line-height: 1.4
+}
+
+@media screen and (max-width: 768px) {
+  .AppSmallText-1 {
+    font-size: 11px;
+    font-size: 1.1rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppSmallText-1 {
+    font-size: 10px;
+    font-size: 1rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppSmallText-1 {
+    font-size: 10px;
+    font-size: 1rem
+  }
+}
+
+.AppSmallText-2 {
+  font-family: 'Alliance Platt', serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: inherit;
+  line-height: normal
+}
+
+@media screen and (max-width: 768px) {
+  .AppSmallText-2 {
+    font-size: 12px;
+    font-size: 1.2rem
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .AppSmallText-2 {
+    font-size: 12px;
+    font-size: 1.2rem
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .AppSmallText-2 {
+    font-size: 12px;
+    font-size: 1.2rem
+  }
+}

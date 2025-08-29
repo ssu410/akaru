@@ -1,36 +1,36 @@
 import { ArrowIcon } from "@/components/icon";
 
 export default function HomeExpertises() {
-  return  <div className="HomeExpertises">
+  return  <div className="HomeExpertises --dark">
   <div className="HomeExpertises-wrap">
-    <div className="HomeExpertise-head">
-      <h2 className="SplitText AnimatedSplitText">Expertise</h2>
+    <div className="HomeExpertises-head">
+      <h2 className="SplitText AnimatedSplitText --anim-title HomeExpertises-headTitle AppTitle-1 --in-view">Expertise</h2>
     </div>
     <div className="HomeExpertises-items">
       <div className="HomeExpertisesItem">
         <div className="HomeExpertisesItem-inner --index-first">
           <div className="HomeExpertisesItem-innerSticky">
-            <div className="HomeExpertisesItem-background"></div>
+            <div className="HomeExpertisesItem-background" style={{backgroundColor: "#F1EFEB"}}></div>
             <div className="HomeExpertisesItem-content">
-              <h3 className="HomeExpertiesItem-contentTitle">
+              <h3 className="HomeExpertisesItem-contentTitle AppTitle-3">
                 Strategy & Advice
               </h3>
 
-              <div className="HomeExpertiesItem-contentText">
+              <div className="HomeExpertisesItem-contentText">
                 <div className="AppText-12 --style-bullets">
                   <div className="list">
                     <div className="even item">
-                      Audit & benchmark{" "}
+                      Audit & benchmark
                     </div>
                     <div className="item">Positioning</div>
                     <div className="breaker"></div>
                     <div className="even item">
-                      Audit & benchmark{" "}
+                      Audit & benchmark
                     </div>
                     <div className="item">Positioning</div>
                     <div className="breaker"></div>
                     <div className="even item">
-                      Audit & benchmark{" "}
+                      Audit & benchmark
                     </div>
                     <div className="item">Positioning</div>
                     <div className="breaker"></div>
@@ -68,13 +68,13 @@ export default function HomeExpertises() {
       <div className="HomeExpertisesItem">
         <div className="HomeExpertisesItem-inner --index-between">
           <div className="HomeExpertisesItem-innerSticky">
-            <div className="HomeExpertisesItem-background"></div>
+            <div className="HomeExpertisesItem-background" style={{backgroundColor: "#B692A1"}}></div>
             <div className="HomeExpertisesItem-content">
-              <h3 className="HomeExpertiesItem-contentTitle">
+              <h3 className="HomeExpertisesItem-contentTitle AppTitle-3">
                 Art Direction
               </h3>
 
-              <div className="HomeExpertiesItem-contentText">
+              <div className="HomeExpertisesItem-contentText">
                 <div className="AppText-12 --style-bullets">
                   <div className="list">
                     <div className="even item">Visual identity</div>
@@ -122,13 +122,13 @@ export default function HomeExpertises() {
       <div className="HomeExpertisesItem">
         <div className="HomeExpertisesItem-inner --index-between">
           <div className="HomeExpertisesItem-innerSticky">
-            <div className="HomeExpertisesItem-background"></div>
+            <div className="HomeExpertisesItem-background" style={{backgroundColor: "#798E7B"}}></div>
             <div className="HomeExpertisesItem-content">
-              <h3 className="HomeExpertiesItem-contentTitle">
+              <h3 className="HomeExpertisesItem-contentTitle AppTitle-3">
                 E-commerce website
               </h3>
 
-              <div className="HomeExpertiesItem-contentText">
+              <div className="HomeExpertisesItem-contentText">
                 <div className="AppText-12 --style-bullets">
                   <div className="list">
                     <div className="even item">Visual identity</div>
@@ -176,13 +176,13 @@ export default function HomeExpertises() {
       <div className="HomeExpertisesItem">
         <div className="HomeExpertisesItem-inner --index-last">
           <div className="HomeExpertisesItem-innerSticky">
-            <div className="HomeExpertisesItem-background"></div>
+            <div className="HomeExpertisesItem-background" style={{backgroundColor: "#FFFFFF"}}></div>
             <div className="HomeExpertisesItem-content">
-              <h3 className="HomeExpertiesItem-contentTitle">
+              <h3 className="HomeExpertisesItem-contentTitle AppTitle-3">
                 Digital Experience
               </h3>
 
-              <div className="HomeExpertiesItem-contentText">
+              <div className="HomeExpertisesItem-contentText">
                 <div className="AppText-12 --style-bullets">
                   <div className="list">
                     <div className="even item">Landing page</div>
@@ -227,7 +227,7 @@ export default function HomeExpertises() {
       </div>
     </div>
     <div className="HomeExpertises-nav">
-      <div className="HomeExpertises-navItem">
+      <div className="HomeExpertises-navItem">``
         <span>01</span>
         <span className="HomeExpertises-navItemTitle">
           Strategy & Advice

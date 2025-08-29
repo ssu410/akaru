@@ -1,11 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowIcon } from "../icon";
 import Logo from "../Logo";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useState, useRef, useEffect } from "react";
+import SplitType from 'split-type'
+
+
 
 export default function HomeSticky() {
   return (
@@ -311,41 +309,39 @@ export default function HomeSticky() {
             </div>
           </div>
           <div className="HomeSticky-step2 --list">
-            <div className="HomeProjects Homepage-projects">
-              <div className="Homepage-ProjectsInner">
-                <div className="Homepage-ProjectsList">
-                  <div className="Homepage-ProjectsItems">
-                    <div className="Homepage-ProjectsItem"></div>
-                    <div className="Homepage-ProjectItem project-item">
+            <div className="HomeProjects Homepage-projectsList">         
+                  <div className="HomeProjects-items">
+                    <div className="HomeProjects-item"></div>
+                    <div className="HomeProjectItem HomeProjects-item">
                       <a
                         href="projects/moon-studio"
-                        className="AppLink HomePage-projectItemLink"
+                        className="AppLink HomeProjectItem-inner"
                       >
-                        <div className="ProjectItem-imageContainer">
-                          <div className="ProjectItem-image">
-                            <img
+                        <div className="HomeProjectItem-imageContainer">
+                          <div className="AppImage HomeProjectItem-image">
+                            <img className="AppImage-image --placeholder --lazy --loaded"
                               src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
                               alt=""
                             />
                           </div>
                         </div>
-                        <div className="ProjectItem-hover">
-                          <div className="HomeProjectItem-hoverHeader">
-                            <span className="HomeProjectItem-hoverCategory SmallText-1 --dark">
+                        <div className="HomeProjectItem-hover">
+                          <div className="HomeProjectItem-hoverHead">
+                            <span className="HomeProjectItem-hoverHeadCat --ttu">
                               Art Direction
                             </span>
-                            <span className="HomeProjectItem-hoverYear AppYear SmallText-1 --dark">
+                            <span className="HomeProjectItem-hoverHeadYear">
                               2024
                             </span>
                           </div>
                           <div className="HomeProjectItem-hoverContent">
-                            <div className="HomeProjectItem-hoverTitle">
+                            <div className="HomeProjectItem-hoverTitle AppTitle-9 --light">
                               <span>Moon studio</span>
                             </div>
-                            <div className="HomeProjectItem-hoverButton">
-                              <Link
+                            <div className="HomeProjectItem-hoverButton --in-view">
+                              <div
                                 href="/projects/moon-studio"
-                                className="AppButton AppLink"
+                                className="AppLink AppButton --dark --in-view"
                               >
                                 <div className="AppButton-border"></div>
                                 <div className="AppButton-svgWrap">
@@ -361,42 +357,42 @@ export default function HomeSticky() {
                                     </span>
                                   </div>
                                 </div>
-                              </Link>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </a>
-                    </div>
-                    <div className="Homepage-ProjectItem project-item">
+                </div>
+                <div className="HomeProjectItem HomeProjects-item">
                       <a
                         href="projects/moon-studio"
-                        className="AppLink HomePage-projectItemLink"
+                        className="AppLink HomeProjectItem-inner"
                       >
-                        <div className="ProjectItem-imageContainer">
-                          <div className="ProjectItem-image">
-                            <img
+                        <div className="HomeProjectItem-imageContainer">
+                          <div className="AppImage HomeProjectItem-image">
+                            <img className="AppImage-image --placeholder --lazy --loaded"
                               src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
                               alt=""
                             />
                           </div>
                         </div>
-                        <div className="ProjectItem-hover">
-                          <div className="HomeProjectItem-hoverHeader">
-                            <span className="HomeProjectItem-hoverCategory">
+                        <div className="HomeProjectItem-hover">
+                          <div className="HomeProjectItem-hoverHead">
+                            <span className="HomeProjectItem-hoverHeadCat --ttu">
                               Art Direction
                             </span>
-                            <span className="HomeProjectItem-hoverYear AppYear">
+                            <span className="HomeProjectItem-hoverHeadYear">
                               2024
                             </span>
                           </div>
                           <div className="HomeProjectItem-hoverContent">
-                            <div className="HomeProjectItem-hoverTitle">
+                            <div className="HomeProjectItem-hoverTitle AppTitle-9 --light">
                               <span>Moon studio</span>
                             </div>
-                            <div className="HomeProjectItem-hoverButton">
-                              <a
-                                href="projects/moon-studio"
-                                className="AppButton AppLink"
+                            <div className="HomeProjectItem-hoverButton --in-view">
+                              <div
+                                href="/projects/moon-studio"
+                                className="AppLink AppButton --dark --in-view"
                               >
                                 <div className="AppButton-border"></div>
                                 <div className="AppButton-svgWrap">
@@ -412,42 +408,42 @@ export default function HomeSticky() {
                                     </span>
                                   </div>
                                 </div>
-                              </a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </a>
-                    </div>
-                    <div className="Homepage-ProjectItem project-item">
+                </div>
+                <div className="HomeProjectItem HomeProjects-item">
                       <a
                         href="projects/moon-studio"
-                        className="AppLink HomePage-projectItemLink"
+                        className="AppLink HomeProjectItem-inner"
                       >
-                        <div className="ProjectItem-imageContainer">
-                          <div className="ProjectItem-image">
-                            <img
+                        <div className="HomeProjectItem-imageContainer">
+                          <div className="AppImage HomeProjectItem-image">
+                            <img className="AppImage-image --placeholder --lazy --loaded"
                               src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
                               alt=""
                             />
                           </div>
                         </div>
-                        <div className="ProjectItem-hover">
-                          <div className="HomeProjectItem-hoverHeader">
-                            <span className="HomeProjectItem-hoverCategory">
+                        <div className="HomeProjectItem-hover">
+                          <div className="HomeProjectItem-hoverHead">
+                            <span className="HomeProjectItem-hoverHeadCat --ttu">
                               Art Direction
                             </span>
-                            <span className="HomeProjectItem-hoverYear AppYear">
+                            <span className="HomeProjectItem-hoverHeadYear">
                               2024
                             </span>
                           </div>
                           <div className="HomeProjectItem-hoverContent">
-                            <div className="HomeProjectItem-hoverTitle">
+                            <div className="HomeProjectItem-hoverTitle AppTitle-9 --light">
                               <span>Moon studio</span>
                             </div>
-                            <div className="HomeProjectItem-hoverButton">
-                              <a
-                                href="projects/moon-studio"
-                                className="AppButton AppLink"
+                            <div className="HomeProjectItem-hoverButton --in-view">
+                              <div
+                                href="/projects/moon-studio"
+                                className="AppLink AppButton --dark --in-view"
                               >
                                 <div className="AppButton-border"></div>
                                 <div className="AppButton-svgWrap">
@@ -463,42 +459,42 @@ export default function HomeSticky() {
                                     </span>
                                   </div>
                                 </div>
-                              </a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </a>
-                    </div>
-                    <div className="Homepage-ProjectItem project-item">
+                </div>
+                <div className="HomeProjectItem HomeProjects-item">
                       <a
                         href="projects/moon-studio"
-                        className="AppLink HomePage-projectItemLink"
+                        className="AppLink HomeProjectItem-inner"
                       >
-                        <div className="ProjectItem-imageContainer">
-                          <div className="ProjectItem-image">
-                            <img
+                        <div className="HomeProjectItem-imageContainer">
+                          <div className="AppImage HomeProjectItem-image">
+                            <img className="AppImage-image --placeholder --lazy --loaded"
                               src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
                               alt=""
                             />
                           </div>
                         </div>
-                        <div className="ProjectItem-hover">
-                          <div className="HomeProjectItem-hoverHeader">
-                            <span className="HomeProjectItem-hoverCategory">
+                        <div className="HomeProjectItem-hover">
+                          <div className="HomeProjectItem-hoverHead">
+                            <span className="HomeProjectItem-hoverHeadCat --ttu">
                               Art Direction
                             </span>
-                            <span className="HomeProjectItem-hoverYear">
+                            <span className="HomeProjectItem-hoverHeadYear">
                               2024
                             </span>
                           </div>
                           <div className="HomeProjectItem-hoverContent">
-                            <div className="HomeProjectItem-hoverTitle">
+                            <div className="HomeProjectItem-hoverTitle AppTitle-9 --light">
                               <span>Moon studio</span>
                             </div>
-                            <div className="HomeProjectItem-hoverButton">
-                              <a
-                                href="projects/moon-studio"
-                                className="AppButton AppLink"
+                            <div className="HomeProjectItem-hoverButton --in-view">
+                              <div
+                                href="/projects/moon-studio"
+                                className="AppLink AppButton --dark --in-view"
                               >
                                 <div className="AppButton-border"></div>
                                 <div className="AppButton-svgWrap">
@@ -514,42 +510,42 @@ export default function HomeSticky() {
                                     </span>
                                   </div>
                                 </div>
-                              </a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </a>
-                    </div>
-                    <div className="Homepage-ProjectItem project-item">
+                </div>
+                <div className="HomeProjectItem HomeProjects-item">
                       <a
                         href="projects/moon-studio"
-                        className="AppLink HomePage-projectItemLink"
+                        className="AppLink HomeProjectItem-inner"
                       >
-                        <div className="ProjectItem-imageContainer">
-                          <div className="ProjectItem-image">
-                            <img
+                        <div className="HomeProjectItem-imageContainer">
+                          <div className="AppImage HomeProjectItem-image">
+                            <img className="AppImage-image --placeholder --lazy --loaded"
                               src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
                               alt=""
                             />
                           </div>
                         </div>
-                        <div className="ProjectItem-hover">
-                          <div className="HomeProjectItem-hoverHeader">
-                            <span className="HomeProjectItem-hoverCategory">
+                        <div className="HomeProjectItem-hover">
+                          <div className="HomeProjectItem-hoverHead">
+                            <span className="HomeProjectItem-hoverHeadCat --ttu">
                               Art Direction
                             </span>
-                            <span className="HomeProjectItem-hoverYear">
+                            <span className="HomeProjectItem-hoverHeadYear">
                               2024
                             </span>
                           </div>
                           <div className="HomeProjectItem-hoverContent">
-                            <div className="HomeProjectItem-hoverTitle">
+                            <div className="HomeProjectItem-hoverTitle AppTitle-9 --light">
                               <span>Moon studio</span>
                             </div>
-                            <div className="HomeProjectItem-hoverButton">
-                              <a
-                                href="projects/moon-studio"
-                                className="AppButton AppLink"
+                            <div className="HomeProjectItem-hoverButton --in-view">
+                              <div
+                                href="/projects/moon-studio"
+                                className="AppLink AppButton --dark --in-view"
                               >
                                 <div className="AppButton-border"></div>
                                 <div className="AppButton-svgWrap">
@@ -565,42 +561,42 @@ export default function HomeSticky() {
                                     </span>
                                   </div>
                                 </div>
-                              </a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </a>
-                    </div>
-                    <div className="Homepage-ProjectItem project-item">
+                </div>
+                <div className="HomeProjectItem HomeProjects-item">
                       <a
                         href="projects/moon-studio"
-                        className="AppLink HomePage-projectItemLink"
+                        className="AppLink HomeProjectItem-inner"
                       >
-                        <div className="ProjectItem-imageContainer">
-                          <div className="ProjectItem-image">
-                            <img
+                        <div className="HomeProjectItem-imageContainer">
+                          <div className="AppImage HomeProjectItem-image">
+                            <img className="AppImage-image --placeholder --lazy --loaded"
                               src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
                               alt=""
                             />
                           </div>
                         </div>
-                        <div className="ProjectItem-hover">
-                          <div className="HomeProjectItem-hoverHeader">
-                            <span className="HomeProjectItem-hoverCategory">
+                        <div className="HomeProjectItem-hover">
+                          <div className="HomeProjectItem-hoverHead">
+                            <span className="HomeProjectItem-hoverHeadCat --ttu">
                               Art Direction
                             </span>
-                            <span className="HomeProjectItem-hoverYear">
+                            <span className="HomeProjectItem-hoverHeadYear">
                               2024
                             </span>
                           </div>
                           <div className="HomeProjectItem-hoverContent">
-                            <div className="HomeProjectItem-hoverTitle">
+                            <div className="HomeProjectItem-hoverTitle AppTitle-9 --light">
                               <span>Moon studio</span>
                             </div>
-                            <div className="HomeProjectItem-hoverButton">
-                              <a
-                                href="projects/moon-studio"
-                                className="AppButton AppLink"
+                            <div className="HomeProjectItem-hoverButton --in-view">
+                              <div
+                                href="/projects/moon-studio"
+                                className="AppLink AppButton --dark --in-view"
                               >
                                 <div className="AppButton-border"></div>
                                 <div className="AppButton-svgWrap">
@@ -616,64 +612,13 @@ export default function HomeSticky() {
                                     </span>
                                   </div>
                                 </div>
-                              </a>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </a>
                     </div>
-                    <div className="Homepage-ProjectItem project-item">
-                      <a
-                        href="projects/moon-studio"
-                        className="AppLink HomePage-projectItemLink"
-                      >
-                        <div className="ProjectItem-imageContainer">
-                          <div className="ProjectItem-image">
-                            <img
-                              src="https://cdn.sanity.io/images/zvxprgaj/production/3f5c4c6b0dd9c8baced3d27dd43a31f6f618f5ed-3600x1720.jpg?w=1280&h=1186&q=80&fit=crop&auto=format"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <div className="ProjectItem-hover">
-                          <div className="HomeProjectItem-hoverHeader">
-                            <span className="HomeProjectItem-hoverCategory">
-                              Art Direction
-                            </span>
-                            <span className="HomeProjectItem-hoverYear">
-                              2024
-                            </span>
-                          </div>
-                          <div className="HomeProjectItem-hoverContent">
-                            <div className="HomeProjectItem-hoverTitle">
-                              <span>Moon studio</span>
-                            </div>
-                            <div className="HomeProjectItem-hoverButton">
-                              <a
-                                href="projects/moon-studio"
-                                className="AppButton AppLink"
-                              >
-                                <div className="AppButton-border"></div>
-                                <div className="AppButton-svgWrap">
-                                  <div className="AppButton-svgWrapDot"></div>
-                                  <div className="AppButton-arrowWrap">
-                                    <span className="AppSvg AppButton-svg">
-                                      <ArrowIcon />
-                                    </span>
-                                  </div>
-                                  <div className="AppButton-arrowWrap --hover">
-                                    <span className="AppSvg AppButton-svg">
-                                      <ArrowIcon />
-                                    </span>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div className="Homepage-ProjectItem --button">
+                    <div className="HomeProjects-item --button">
                       <div className="HomeProjects-button">
                         <a href="projects" className="AppButton">
                           <div className="AppButton-border"></div>
@@ -702,19 +647,17 @@ export default function HomeSticky() {
                         </a>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </div>              
             </div>
           </div>
           <div className="HomeSticky-step2 --desc">
             <div className="HomeProjectsDesc">
               <div className="HomeProjectsDesc-content">
-                <h2 className="SplitText AnimatedSplitText HomeProjectsDesc-title">
+                <h2 className="SplitText AnimatedSplitText --anim-title HomeProjectsDesc-title AppTitle-1 --tac">
                   Projects
                 </h2>
                 <ul className="HomeProjectsDesc-skills">
-                  <li className="HomeProjectsDesc-skillsItem">
+                  <li className="HomeProjectsDesc-skillsItem AppSmallText-1">
                     <div className="HomeProjectsDesc-skillsItemWrap">
                       <span className="--num">00</span>
                       <span className="--text">
@@ -729,7 +672,7 @@ export default function HomeSticky() {
                     </div>
                     <div className="HomeProjectsDesc-skillsItemLine"></div>
                   </li>
-                  <li className="HomeProjectsDesc-skillsItem">
+                  <li className="HomeProjectsDesc-skillsItem AppSmallText-1">
                     <div className="HomeProjectsDesc-skillsItemWrap">
                       <span className="--num">01</span>
                       <span className="--text">
@@ -744,7 +687,7 @@ export default function HomeSticky() {
                     </div>
                     <div className="HomeProjectsDesc-skillsItemLine"></div>
                   </li>
-                  <li className="HomeProjectsDesc-skillsItem">
+                  <li className="HomeProjectsDesc-skillsItem AppSmallText-1">
                     <div className="HomeProjectsDesc-skillsItemWrap">
                       <span className="--num">02</span>
                       <span className="--text">
@@ -759,7 +702,7 @@ export default function HomeSticky() {
                     </div>
                     <div className="HomeProjectsDesc-skillsItemLine"></div>
                   </li>
-                  <li className="HomeProjectsDesc-skillsItem">
+                  <li className="HomeProjectsDesc-skillsItem AppSmallText-1">
                     <div className="HomeProjectsDesc-skillsItemWrap">
                       <span className="--num">03</span>
                       <span className="--text">

@@ -6,7 +6,7 @@ export default function HomeFooter() {
   return (
     <div className="HomeFooter">
       <div className="HomeFooter-container">
-        <div className="SplitText AnimatedSplitText HomeFooter-title">
+        <div className="SplitText AnimatedSplitText --anim-title HomeFooter-title AppTitle-1 --tac --in-view">
           We challenge you to challenge us.
         </div>
         <a href="" className="AppLink AppButton HomeFooter-button">

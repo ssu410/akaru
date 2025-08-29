@@ -4,18 +4,18 @@ import { ArrowIcon } from "../icon";
 
 export default function HomeAgency() {
   return (
-    <div className="HomeAgency">
+    <div className="HomeAgency --dark">
       <div className="HomeAgency-container">
         <div className="HomeAgency-header">
           <div className="HomeAgency-title">
-            <h2 className="SplitText AnimatedSplitText">Agency</h2>
+            <h2 className="SplitText AnimatedSplitText --anim-title AppTitle-1 --dark --tac --in-view">Agency</h2>
           </div>
           <div className="HomeAgency-intro">
-            <div className="HomeAgency-introTitle">
+            <div className="HomeAgency-introTitle AppSmallText-1 --dark">
               <span>Web agency Lyon</span>
             </div>
             <div className="HomeAgency-introText">
-              <div className="appText-2">
+              <div className="AppText-2 --dark">
                 <p>
                   We love being close to our customers, we cherish the
                   encounters that make us grow and the challenges that
@@ -23,7 +23,7 @@ export default function HomeAgency() {
                 </p>
               </div>
             </div>
-            <a className="AppList AppButton HomeAgency-introButton">
+            <a className="AppLink AppButton --light --is-show HomeAgency-introButton">
               <div className="AppButton-border"></div>
               <div className="AppButton-label SmallText-1">
                 <span>Our agency</span>
